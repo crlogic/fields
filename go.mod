@@ -1,6 +1,6 @@
 module github.com/crlogic/fields
 
-go 1.21.0
+go 1.24rc1
 
 require (
 	github.com/gin-gonic/gin v1.10.0
