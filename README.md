@@ -1,7 +1,7 @@
-[![Go](https://github.com/manuelarte/fields/actions/workflows/go.yml/badge.svg)](https://github.com/manuelarte/fields/actions/workflows/go.yml)
-![coverage](https://raw.githubusercontent.com/manuelarte/fields/badges/.badges/main/coverage.svg)
-[![Go Report Card](https://goreportcard.com/badge/github.com/manuelarte/fields)](https://goreportcard.com/report/github.com/manuelarte/fields)
-![version](https://img.shields.io/github/v/release/manuelarte/fields)
+[![Go](https://github.com/crlogic/fields/actions/workflows/go.yml/badge.svg)](https://github.com/crlogic/fields/actions/workflows/go.yml)
+![coverage](https://raw.githubusercontent.com/crlogic/fields/badges/.badges/main/coverage.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/crlogic/fields)](https://goreportcard.com/report/github.com/crlogic/fields)
+![version](https://img.shields.io/github/v/release/crlogic/fields)
 # fields
 Rest Partial Response (aka Field Selection) Pattern middleware for [Gin](https://gin-gonic.com/). This gin middleware allows you to select a subset of fields to be returned from your endpoints.
 
@@ -28,7 +28,7 @@ We can call the endpoint and, with the query parameter fields, filter out the fi
 
 - Run the command:
 
-> go get -u -d github.com/manuelarte/fields
+> go get -u -d github.com/crlogic/fields
 
 - Add fields middleware
 ```go

@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/manuelarte/fields"
-	"github.com/manuelarte/fields/pkg"
 	"net/http"
 	"net/http/httptest"
 	"os"
 	"time"
+
+	"github.com/crlogic/fields/pkg"
 
 	"github.com/gin-gonic/gin"
 )

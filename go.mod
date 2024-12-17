@@ -1,4 +1,4 @@
-module github.com/manuelarte/fields
+module github.com/crlogic/fields
 
 go 1.21.0
 

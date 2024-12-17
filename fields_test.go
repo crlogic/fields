@@ -7,8 +7,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/crlogic/fields/pkg"
 	"github.com/gin-gonic/gin"
-	"github.com/manuelarte/fields/pkg"
 	"github.com/stretchr/testify/assert"
 )
 

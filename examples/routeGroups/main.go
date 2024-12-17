@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/manuelarte/fields/pkg"
+	"github.com/crlogic/fields/pkg"
 
 	"github.com/gin-gonic/gin"
 )

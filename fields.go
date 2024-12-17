@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/crlogic/fields/pkg"
 	"github.com/gin-gonic/gin"
-	"github.com/manuelarte/fields/pkg"
 )
 
 // customResponseWriter captures the response body for modification
