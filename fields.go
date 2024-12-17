@@ -3,6 +3,7 @@ package fields
 import (
 	"bytes"
 	"encoding/json"
+	"strconv"
 	"strings"
 
 	"github.com/gin-gonic/gin"
@@ -47,7 +48,7 @@ func Fields(configOptions ...pkg.ConfigOption) gin.HandlerFunc {
 					if err == nil {
 						c.Writer = writer.ResponseWriter // Set back to original writer
 						_, _ = c.Writer.Write(modifiedBody)
-
+						c.Header("Content-Length", strconv.Itoa(len(modifiedBody)))
 						return
 					}
 				}

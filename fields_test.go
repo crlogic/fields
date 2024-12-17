@@ -3,12 +3,13 @@ package fields
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/gin-gonic/gin"
-	"github.com/manuelarte/fields/pkg"
-	"github.com/stretchr/testify/assert"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/gin-gonic/gin"
+	"github.com/manuelarte/fields/pkg"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestEchoRoute(t *testing.T) {
@@ -245,7 +246,7 @@ func TestEchoWrapRoute(t *testing.T) {
 
 func setupRouter(configOptions ...pkg.ConfigOption) *gin.Engine {
 	r := gin.Default()
-	r.Use(fields(configOptions...))
+	r.Use(Fields(configOptions...))
 
 	return r
 }
