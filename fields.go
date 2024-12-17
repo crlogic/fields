@@ -1,11 +1,12 @@
-package milogo
+package fields
 
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/gin-gonic/gin"
-	"github.com/manuelarte/milogo/pkg"
 	"strings"
+
+	"github.com/gin-gonic/gin"
+	"github.com/manuelarte/fields/pkg"
 )
 
 // customResponseWriter captures the response body for modification
@@ -19,7 +20,7 @@ func (w *customResponseWriter) Write(data []byte) (int, error) {
 	return w.body.Write(data)
 }
 
-func Milogo(configOptions ...pkg.ConfigOption) gin.HandlerFunc {
+func Fields(configOptions ...pkg.ConfigOption) gin.HandlerFunc {
 	config := pkg.DefaultConfig(configOptions...)
 
 	return func(c *gin.Context) {

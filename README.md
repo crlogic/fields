@@ -1,8 +1,8 @@
-[![Go](https://github.com/manuelarte/milogo/actions/workflows/go.yml/badge.svg)](https://github.com/manuelarte/milogo/actions/workflows/go.yml)
-![coverage](https://raw.githubusercontent.com/manuelarte/milogo/badges/.badges/main/coverage.svg)
-[![Go Report Card](https://goreportcard.com/badge/github.com/manuelarte/milogo)](https://goreportcard.com/report/github.com/manuelarte/milogo)
-![version](https://img.shields.io/github/v/release/manuelarte/milogo)
-# Milogo
+[![Go](https://github.com/manuelarte/fields/actions/workflows/go.yml/badge.svg)](https://github.com/manuelarte/fields/actions/workflows/go.yml)
+![coverage](https://raw.githubusercontent.com/manuelarte/fields/badges/.badges/main/coverage.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/manuelarte/fields)](https://goreportcard.com/report/github.com/manuelarte/fields)
+![version](https://img.shields.io/github/v/release/manuelarte/fields)
+# fields
 Rest Partial Response (aka Field Selection) Pattern middleware for [Gin](https://gin-gonic.com/). This gin middleware allows you to select a subset of fields to be returned from your endpoints.
 
 e.g. Imagine that you have the following rest endpoint that returns a product with the fields, `code, price, description, manufacturedBy`:
@@ -28,12 +28,12 @@ We can call the endpoint and, with the query parameter fields, filter out the fi
 
 - Run the command:
 
-> go get -u -d github.com/manuelarte/milogo
+> go get -u -d github.com/manuelarte/fields
 
-- Add milogo middleware
+- Add fields middleware
 ```go
 r := gin.Default()
-r.Use(Milogo())
+r.Use(fields())
 ```
 
 - Call your endpoints adding the query parameter `fields` with the fields you want to filter:
@@ -90,7 +90,7 @@ r.Use(Milogo())
 
 - [Middleware applied to route groups with different configuration](./example/routeGroups)
 
-Milogo middleware, as any other gin middleware, can be applied to different route groups with different configurations.
+fields middleware, as any other gin middleware, can be applied to different route groups with different configurations.
 
 ## 🤝 Contributing
 

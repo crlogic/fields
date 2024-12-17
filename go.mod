@@ -1,4 +1,4 @@
-module github.com/manuelarte/milogo
+module github.com/manuelarte/fields
 
 go 1.21.0
 

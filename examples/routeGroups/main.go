@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/manuelarte/milogo"
-	"github.com/manuelarte/milogo/pkg"
 	"net/http"
 	"net/http/httptest"
 	"os"
 	"time"
+
+	"github.com/manuelarte/fields/pkg"
 
 	"github.com/gin-gonic/gin"
 )
@@ -38,7 +38,7 @@ var (
 func setupRouter() *gin.Engine {
 	r := gin.Default()
 
-	usersGroup := r.Group("/users", milogo.Milogo())
+	usersGroup := r.Group("/users", fields.fields())
 	usersGroup.GET("", func(c *gin.Context) {
 		c.IndentedJSON(http.StatusOK, []User{manuel, milo})
 	})
@@ -51,8 +51,8 @@ func setupRouter() *gin.Engine {
 		}
 	})
 
-	milogoOption, _ := pkg.WithWrapField("data")
-	wrappedUsersGroup := r.Group("/wrapped/users", milogo.Milogo(milogoOption))
+	fieldsOption, _ := pkg.WithWrapField("data")
+	wrappedUsersGroup := r.Group("/wrapped/users", fields.fields(fieldsOption))
 	wrappedUsersGroup.GET("", func(c *gin.Context) {
 		c.IndentedJSON(http.StatusOK, Response[[]User]{
 			Data:     []User{manuel, milo},

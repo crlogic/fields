@@ -1,10 +1,10 @@
-package milogo
+package fields
 
 import (
 	"bytes"
 	"encoding/json"
 	"github.com/gin-gonic/gin"
-	"github.com/manuelarte/milogo/pkg"
+	"github.com/manuelarte/fields/pkg"
 	"github.com/stretchr/testify/assert"
 	"net/http"
 	"net/http/httptest"
@@ -82,14 +82,14 @@ func TestEchoCustomHeadersRoute(t *testing.T) {
 		"query param fields, 1/2, one custom header": {
 			body:               map[string]interface{}{"name": "Manuel", "age": 99},
 			fields:             "name",
-			customHeaders:      map[string]string{"X-Milogo": "one_deleted"},
+			customHeaders:      map[string]string{"X-fields": "one_deleted"},
 			expectedHttpStatus: http.StatusOK,
 			expectedBody:       `{"name":"Manuel"}`,
 		},
 		"query param fields, 2/2, two custom headers": {
 			body:               map[string]interface{}{"name": "Manuel", "age": 99},
 			fields:             "name,age",
-			customHeaders:      map[string]string{"X-Milogo": "one_deleted", "X-Trace-id": "1"},
+			customHeaders:      map[string]string{"X-fields": "one_deleted", "X-Trace-id": "1"},
 			expectedHttpStatus: http.StatusAccepted,
 			expectedBody:       `{"name":"Manuel","age":99}`,
 		},
@@ -216,8 +216,8 @@ func TestEchoWrapRoute(t *testing.T) {
 		name, test := name, test
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
-			milogoOption, _ := pkg.WithWrapField("data")
-			router := setupRouter(milogoOption)
+			fieldsOption, _ := pkg.WithWrapField("data")
+			router := setupRouter(fieldsOption)
 			url := "/echo-wrap"
 			router.POST(url, func(c *gin.Context) {
 				type Response struct {
@@ -245,7 +245,7 @@ func TestEchoWrapRoute(t *testing.T) {
 
 func setupRouter(configOptions ...pkg.ConfigOption) *gin.Engine {
 	r := gin.Default()
-	r.Use(Milogo(configOptions...))
+	r.Use(fields(configOptions...))
 
 	return r
 }

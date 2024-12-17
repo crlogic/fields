@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/manuelarte/milogo"
 	"net/http"
 	"net/http/httptest"
 	"os"
@@ -26,7 +25,7 @@ type User struct {
 
 func setupRouter() *gin.Engine {
 	r := gin.Default()
-	r.Use(milogo.Milogo())
+	r.Use(fields.fields())
 
 	// Get user value
 	r.GET("/users/:name", func(c *gin.Context) {
